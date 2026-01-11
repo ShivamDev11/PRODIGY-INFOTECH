@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Animated Portfolio</title>
+    
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/animate.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+        <div class="container">
+            <a class="navbar-brand neon-text" href="#">Mr.Shivam Portfolio</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#home">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#about">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#skills">Skills</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#projects">Projects</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#achievements">Achievements</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#contact">Contact</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Home Section -->
+    <section id="home" class="home-section">
+        <div class="container">
+            <div class="row align-items-center min-vh-100">
+                <div class="col-lg-6">
+                    <h1 class="animated-text">Hi, I'm <span class="neon-text">Shivam Chauhan</span></h1>
+                    <h2 class="typing-text">Full Stack Developer</h2>
+                    <p class="lead">Creating amazing digital experiences with cutting-edge technologies</p>
+                    <a href="#about" class="btn btn-neon">Explore More</a>
+                </div>
+                <div class="col-lg-6">
+                <div class="home-profile-container">
+                    <div class="home-profile-frame">
+                        <!-- Cropped image (hair to stomach) -->
+                        <img src="images/profile.jpg" alt="Profile" class="home-profile-pic">
+                        <!-- Moving outline -->
+                        <div class="home-neon-outline"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    </section>
+
+    <!-- About Section - UPDATED: Only Outline Moves -->
+    <section id="about" class="about-section">
+        <div class="container">
+            <h2 class="section-title">About Me</h2>
+            <div class="row">
+                <div class="col-lg-4">
+                    <div class="profile-container">
+                        <div class="profile-frame">
+                            <!-- Image stays static -->
+                            <img src="images/profile.jpg" alt="Profile" class="profile-pic">
+                            <!-- Only this outline moves -->
+                            <div class="neon-outline"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-8">
+                    <div class="about-content">
+                        <h3 class="neon-text">Creative Developer</h3>
+                        <p>A passionate and motivated web developer currently pursuing B.Voc in Software Development from Jai Hind College, seeking to build a career in Python development with a focus on Artificial Intelligence and Machine Learning. Eager to learn, grow, and contribute to innovative projects that combine creativity and technology.</p>
+                        
+                        <div class="info-grid">
+                            <div class="info-item">
+                                <span class="label">Name:</span>
+                                <span class="value">Shivam Chauhan</span>
+                            </div>
+                            <div class="info-item">
+                                <span class="label">Email:</span>
+                                <span class="value">shivamchauhan1106@gmail.com</span>
+                            </div>
+                            <div class="info-item">
+                                <span class="label">Location:</span>
+                                <span class="value">Mumbai, India</span>
+                            </div>
+                            <div class="info-item">
+                                <span class="label">Freelance:</span>
+                                <span class="value">Available</span>
+                            </div>
+                        </div>
+                        
+                        <a href="assets\SHIVAM_CHAUHAN_Web_Developer_Resume.docx" class="btn btn-neon">Download CV</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+   <!-- Skills Section -->
+<section id="skills" class="skills-section">
+    <div class="container">
+        <h2 class="section-title">My Skills</h2>
+        <div class="skills-grid">
+            <div class="skill-item" data-skill="HTML5">
+                <div class="skill-icon">
+                    <i class="fab fa-html5"></i>
+                </div>
+                <span class="skill-name">HTML5</span>
+            </div>
+            
+            <div class="skill-item" data-skill="CSS3">
+                <div class="skill-icon">
+                    <i class="fab fa-css3-alt"></i>
+                </div>
+                <span class="skill-name">CSS3</span>
+            </div>
+            
+            <div class="skill-item" data-skill="JavaScript">
+                <div class="skill-icon">
+                    <i class="fab fa-js"></i>
+                </div>
+                <span class="skill-name">JavaScript</span>
+            </div>
+            
+            <div class="skill-item" data-skill="PHP">
+                <div class="skill-icon">
+                    <i class="fab fa-php"></i>
+                </div>
+                <span class="skill-name">PHP</span>
+            </div>
+            
+            <div class="skill-item" data-skill="Python">
+                <div class="skill-icon">
+                    <i class="fab fa-python"></i>
+                </div>
+                <span class="skill-name">Python</span>
+            </div>
+            
+            <div class="skill-item" data-skill="React">
+                <div class="skill-icon">
+                    <i class="fab fa-react"></i>
+                </div>
+                <span class="skill-name">React.js</span>
+            </div>
+            
+            <div class="skill-item" data-skill="Bootstrap">
+                <div class="skill-icon">
+                    <i class="fab fa-bootstrap"></i>
+                </div>
+                <span class="skill-name">Bootstrap</span>
+            </div>
+            
+            <div class="skill-item" data-skill="MySQL">
+                <div class="skill-icon">
+                    <i class="fas fa-database"></i>
+                </div>
+                <span class="skill-name">MySQL</span>
+            </div>
+            
+            <div class="skill-item" data-skill="SQLite">
+                <div class="skill-icon">
+                    <i class="fas fa-database"></i>
+                </div>
+                <span class="skill-name">SQLite</span>
+            </div>
+            
+            <div class="skill-item" data-skill="OOP">
+                <div class="skill-icon">
+                    <i class="fas fa-object-group"></i>
+                </div>
+                <span class="skill-name">OOP</span>
+            </div>
+            
+            <div class="skill-item" data-skill="Wix">
+                <div class="skill-icon">
+                    <i class="fas fa-palette"></i>
+                </div>
+                <span class="skill-name">Wix Builder</span>
+            </div>
+        </div>
+    </div>
+</section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="projects-section">
+        <div class="container">
+            <h2 class="section-title">My Projects</h2>
+            <div class="row">
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="project-card">
+                        <div class="project-img">
+                            <img src="images/image2.png" alt="Project 1">
+                        </div>
+                        <div class="project-content">
+                            <h3>Beginner Project – Static Website for Classes</h3>
+                            <p>Developed a static website using HTML, CSS, and JavaScript to showcase class information</p>
+                            <div class="project-links">
+                                <a href="https://dellusr.github.io/jpclass.github.io/" class="btn btn-neon">View Project</a>
+                                <a href="https://github.com/dellusr/jpclass.github.io.git" class="btn btn-outline-neon">Source Code</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="project-card">
+                        <div class="project-img">
+                            <img src="images/image1.png" alt="Project 2">
+                        </div>
+                        <div class="project-content">
+                            <h3>Authentication System – Login & Register Page</h3>
+                            <p>Enhanced UI/UX by creating login and registration pages using HTML, CSS, jQuery, and JavaScript</p>
+                            <div class="project-links">
+                                <a href="https://dellusr.github.io/formsliding.github.io/" class="btn btn-neon">View Project</a>
+                                <a href="https://github.com/dellusr/formsliding.github.io.git" class="btn btn-outline-neon">Source Code</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="project-card">
+                        <div class="project-img">
+                            <img src="images/image.png" alt="Project 3">
+                        </div>
+                        <div class="project-content">
+                            <h3>Campus Intern – Dynamic Web Application</h3>
+                            <p>Developed a dynamic web-based software for college using raw PHP, SQLite, and Bootstrap. This project improved backend and database management skills.</p>
+                            <div class="project-links">
+                                <a href="https://campusinternbyjhc.infinityfreeapp.com" class="btn btn-neon">View Project</a>
+                                <a href="#" class="btn btn-outline-neon">No! Source Code Private.</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Achievements Section - UPDATED: Only Outline Moves -->
+    <section id="achievements" class="achievements-section">
+        <div class="container">
+            <h2 class="section-title">My Certifications</h2>
+            <div class="row">
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="certificate-card">
+                        <!-- Moving outline -->
+                        <div class="certificate-outline"></div>
+                        <div class="certificate-img">
+                            <img src="images/certificates/cert4.jpg" alt="Certification 1">
+                        </div>
+                        <div class="certificate-content">
+                            <h3>Tech Srujan 2024</h3>
+                            <p>Participation Certificate for creating dynamic E-commerce website in intercollegiate event.</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="certificate-card">
+                        <div class="certificate-outline"></div>
+                        <div class="certificate-img">
+                            <img src="images/certificates/cert2.jpg" alt="Certification 2">
+                        </div>
+                        <div class="certificate-content">
+                            <h3>Certification of Appreciation</h3>
+                            <p>For working in Dot Com Club (DCC) as a Creative Team Member.</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="certificate-card">
+                        <div class="certificate-outline"></div>
+                        <div class="certificate-img">
+                            <img src="images/certificates/cert3.jpg" alt="Certification 3">
+                        </div>
+                        <div class="certificate-content">
+                            <h3>Google Certification</h3>
+                            <p>Successfully completed Introduction to Generative AI by Google.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact-section">
+        <div class="container">
+            <h2 class="section-title">Get In Touch</h2>
+            <div class="row">
+                <div class="col-lg-8 mx-auto">
+                    <div class="contact-form-container">
+                        <form id="contactForm" class="contact-form">
+                            <div class="form-group">
+                                <input type="text" class="form-control" placeholder="Your Name" required>
+                            </div>
+                            <div class="form-group">
+                                <input type="email" class="form-control" placeholder="Your Email" required>
+                            </div>
+                            <div class="form-group">
+                                <input type="text" class="form-control" placeholder="Subject" required>
+                            </div>
+                            <div class="form-group">
+                                <textarea class="form-control" rows="5" placeholder="Your Message" required></textarea>
+                            </div>
+                            <button type="submit" class="btn btn-neon btn-block">Send Message</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="social-links">
+                <a href="#" class="social-link"><i class="fab fa-github"></i></a>
+                <a href="https://www.linkedin.com/in/shivam-chauhan-2bb027353/" class="social-link"><i class="fab fa-linkedin"></i></a>
+                <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
+                <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
+            </div>
+            <p>&copy; 2023 Shivam Chauhan. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    
+    <!-- Particles.js Library -->
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+    
+    <!-- Custom Scripts -->
+    <script src="js/script.js"></script>
+    <script src="js/particles.js"></script>
+</body>
+</html>

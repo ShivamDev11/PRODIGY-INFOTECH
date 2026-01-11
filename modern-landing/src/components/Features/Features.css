@@ -1,0 +1,17 @@
+.features-section {
+  background: #f8f9fa;
+}
+
+.feature-card {
+  transition: all 0.3s ease;
+  border-radius: 15px !important;
+}
+
+.feature-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1) !important;
+}
+
+.feature-icon {
+  font-size: 3rem;
+}

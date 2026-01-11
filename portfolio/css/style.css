@@ -1,0 +1,755 @@
+/* Global Styles */
+:root {
+    --neon-blue: #00f3ff;
+    --neon-pink: #ff00ff;
+    --neon-green: #39ff14;
+    --dark-bg: #0a0a0a;
+    --darker-bg: #050505;
+    --text-color: #ffffff;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: var(--dark-bg);
+    color: var(--text-color);
+    overflow-x: hidden;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+/* Navigation */
+.navbar {
+    background: rgba(10, 10, 10, 0.95);
+    backdrop-filter: blur(10px);
+    padding: 1rem 0;
+    transition: all 0.3s ease;
+}
+
+.navbar-brand {
+    font-size: 1.8rem;
+    font-weight: bold;
+}
+
+.navbar-nav .nav-link {
+    color: var(--text-color) !important;
+    margin: 0 0.5rem;
+    position: relative;
+    transition: all 0.3s ease;
+}
+
+.navbar-nav .nav-link:hover {
+    color: var(--neon-blue) !important;
+}
+
+.navbar-nav .nav-link::after {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: var(--neon-blue);
+    transition: width 0.3s ease;
+}
+
+.navbar-nav .nav-link:hover::after {
+    width: 100%;
+}
+
+/* Neon Text */
+.neon-text {
+    color: var(--neon-blue);
+    text-shadow: 0 0 10px var(--neon-blue),
+                 0 0 20px var(--neon-blue),
+                 0 0 40px var(--neon-blue);
+    animation: neon-pulse 2s infinite alternate;
+}
+
+@keyframes neon-pulse {
+    from {
+        text-shadow: 0 0 10px var(--neon-blue),
+                     0 0 20px var(--neon-blue),
+                     0 0 40px var(--neon-blue);
+    }
+    to {
+        text-shadow: 0 0 5px var(--neon-blue),
+                     0 0 10px var(--neon-blue),
+                     0 0 20px var(--neon-blue);
+    }
+}
+
+/* Sections */
+section {
+    padding: 100px 0;
+    position: relative;
+}
+
+.section-title {
+    font-size: 3rem;
+    text-align: center;
+    margin-bottom: 3rem;
+    position: relative;
+}
+
+.section-title::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100px;
+    height: 3px;
+    background: var(--neon-blue);
+    box-shadow: 0 0 10px var(--neon-blue);
+}
+
+/* Home Section */
+/* Home Section Profile - UPDATED: Cropped & Outline Only Moves */
+.home-profile-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+.home-profile-frame {
+    position: relative;
+    width: 350px;
+    height: 400px; /* Taller for hair-to-stomach crop */
+    border-radius: 50% 50% 40% 40%; /* Oval shape for portrait crop */
+    display: flex;
+    justify-content: center;
+    align-items: flex-start; /* Align to top for hair-to-stomach */
+    overflow: hidden;
+}
+
+.home-profile-pic {
+    width: 320px;
+    height: 380px;
+    object-fit: cover;
+    object-position: top center; /* Focus on head and upper body */
+    border-radius: 50% 50% 40% 40%; /* Match frame shape */
+    position: relative;
+    z-index: 2;
+    /* Image stays still */
+    transition: transform 0.3s ease;
+}
+
+/* Home Neon Outline - ONLY THIS MOVES */
+.home-neon-outline {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 50% 50% 40% 40%; /* Match oval shape */
+    background: linear-gradient(45deg, 
+        #00f3ff, #ff00ff, #39ff14, #ffeb3b, 
+        #00f3ff, #ff00ff, #39ff14, #ffeb3b);
+    background-size: 400% 400%;
+    z-index: 1;
+    animation: rotate-neon 3s linear infinite, 
+               color-shift 4s ease-in-out infinite;
+    filter: blur(8px);
+    opacity: 0.8;
+}
+
+.home-neon-outline::before {
+    content: '';
+    position: absolute;
+    top: -5px;
+    left: -5px;
+    right: -5px;
+    bottom: -5px;
+    border-radius: 50% 50% 40% 40%; /* Match oval shape */
+    background: inherit;
+    background-size: inherit;
+    z-index: -1;
+    filter: blur(15px);
+    opacity: 0.6;
+    animation: inherit;
+}
+
+/* Hover effect - outline becomes more vibrant */
+.home-profile-frame:hover .home-neon-outline {
+    animation-duration: 1.5s;
+    filter: blur(12px);
+    opacity: 1;
+}
+
+.home-profile-frame:hover .home-profile-pic {
+    transform: scale(1.02); /* Very slight scale on hover */
+}
+
+/* Remove old home image styles */
+.floating-img {
+    /* Remove this class entirely */
+    display: none;
+}
+
+.profile-img {
+    /* Remove this class entirely */
+    display: none;
+}
+
+/* About Section - UPDATED: Only Outline Moves */
+.about-section {
+    background: var(--darker-bg);
+}
+
+.profile-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+.profile-frame {
+    position: relative;
+    width: 300px;
+    height: 300px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.profile-pic {
+    width: 280px;
+    height: 280px;
+    border-radius: 50%;
+    object-fit: cover;
+    position: relative;
+    z-index: 2;
+    /* Image stays still */
+    transition: transform 0.3s ease;
+}
+
+/* Neon Outline - ONLY THIS MOVES */
+.neon-outline {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    background: linear-gradient(45deg, 
+        #00f3ff, #ff00ff, #39ff14, #ffeb3b, 
+        #00f3ff, #ff00ff, #39ff14, #ffeb3b);
+    background-size: 400% 400%;
+    z-index: 1;
+    animation: rotate-neon 3s linear infinite, 
+               color-shift 4s ease-in-out infinite;
+    filter: blur(8px);
+    opacity: 0.8;
+}
+
+.neon-outline::before {
+    content: '';
+    position: absolute;
+    top: -5px;
+    left: -5px;
+    right: -5px;
+    bottom: -5px;
+    border-radius: 50%;
+    background: inherit;
+    background-size: inherit;
+    z-index: -1;
+    filter: blur(15px);
+    opacity: 0.6;
+    animation: inherit;
+}
+
+/* Outline Animation - ONLY THE OUTLINE MOVES */
+@keyframes rotate-neon {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes color-shift {
+    0%, 100% {
+        background-position: 0% 50%;
+        filter: hue-rotate(0deg) blur(8px);
+    }
+    25% {
+        background-position: 50% 100%;
+        filter: hue-rotate(90deg) blur(10px);
+    }
+    50% {
+        background-position: 100% 50%;
+        filter: hue-rotate(180deg) blur(8px);
+    }
+    75% {
+        background-position: 50% 0%;
+        filter: hue-rotate(270deg) blur(10px);
+    }
+}
+
+/* Hover effect - outline becomes more vibrant */
+.profile-frame:hover .neon-outline {
+    animation-duration: 1.5s;
+    filter: blur(12px);
+    opacity: 1;
+}
+
+.profile-frame:hover .profile-pic {
+    transform: scale(1.02); /* Very slight scale on hover */
+}
+
+.info-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+    margin: 2rem 0;
+}
+
+.info-item {
+    display: flex;
+    justify-content: space-between;
+    padding: 0.5rem 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.label {
+    font-weight: bold;
+    color: var(--neon-blue);
+}
+
+/* Skills Section */
+.skills-section {
+    background: var(--dark-bg);
+}
+
+.skills-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 2rem;
+    margin-top: 3rem;
+}
+
+.skill-item {
+    background: rgba(255, 255, 255, 0.05);
+    padding: 2rem;
+    border-radius: 15px;
+    text-align: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.skill-item::before {
+    content: '';
+    position: absolute;
+    top: -2px;
+    left: -2px;
+    right: -2px;
+    bottom: -2px;
+    background: linear-gradient(45deg, var(--neon-blue), var(--neon-pink), var(--neon-green));
+    z-index: -1;
+    border-radius: 16px;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.skill-item:hover::before {
+    opacity: 1;
+    animation: rotate-border 3s linear infinite;
+}
+
+.skill-item:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 30px rgba(0, 243, 255, 0.3);
+}
+
+.skill-icon {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+    color: var(--neon-blue);
+}
+
+.skill-name {
+    font-size: 1.2rem;
+    font-weight: bold;
+}
+
+/* Projects Section */
+.projects-section {
+    background: var(--darker-bg);
+}
+
+.project-card {
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 15px;
+    overflow: hidden;
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+.project-card::before {
+    content: '';
+    position: absolute;
+    top: -2px;
+    left: -2px;
+    right: -2px;
+    bottom: -2px;
+    background: linear-gradient(45deg, var(--neon-blue), var(--neon-pink), var(--neon-green));
+    z-index: -1;
+    border-radius: 17px;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.project-card:hover::before {
+    opacity: 1;
+    animation: rotate-border 3s linear infinite;
+}
+
+.project-card:hover {
+    transform: translateY(-10px);
+}
+
+.project-img {
+    width: 100%;
+    height: 200px;
+    overflow: hidden;
+}
+
+.project-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.project-card:hover .project-img img {
+    transform: scale(1.1);
+}
+
+.project-content {
+    padding: 1.5rem;
+}
+
+.project-links {
+    display: flex;
+    gap: 1rem;
+    margin-top: 1rem;
+}
+
+/* Achievements Section - UPDATED: Only Outline Moves */
+.achievements-section {
+    background: var(--dark-bg);
+}
+
+.certificate-card {
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 15px;
+    overflow: hidden;
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+.certificate-outline {
+    position: absolute;
+    top: -2px;
+    left: -2px;
+    right: -2px;
+    bottom: -2px;
+    background: linear-gradient(45deg, var(--neon-blue), var(--neon-pink), var(--neon-green));
+    z-index: -1;
+    border-radius: 17px;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    animation: rotate-border 3s linear infinite;
+}
+
+.certificate-card:hover .certificate-outline {
+    opacity: 1;
+}
+
+.certificate-card:hover {
+    transform: translateY(-10px);
+}
+
+.certificate-img {
+    width: 100%;
+    height: 200px;
+    overflow: hidden;
+    position: relative;
+}
+
+.certificate-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+/* Only image scales slightly on hover, doesn't move around */
+.certificate-card:hover .certificate-img img {
+    transform: scale(1.05);
+}
+
+.certificate-content {
+    padding: 1.5rem;
+}
+
+/* Contact Section */
+.contact-section {
+    background: var(--darker-bg);
+}
+
+.contact-form-container {
+    background: rgba(255, 255, 255, 0.05);
+    padding: 3rem;
+    border-radius: 15px;
+    position: relative;
+    overflow: hidden;
+}
+
+.contact-form-container::before {
+    content: '';
+    position: absolute;
+    top: -2px;
+    left: -2px;
+    right: -2px;
+    bottom: -2px;
+    background: linear-gradient(45deg, var(--neon-blue), var(--neon-pink), var(--neon-green));
+    z-index: -1;
+    border-radius: 17px;
+    animation: rotate-border 3s linear infinite;
+}
+
+.form-group {
+    margin-bottom: 1.5rem;
+    position: relative;
+}
+
+.form-control {
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 10px;
+    color: var(--text-color);
+    padding: 1rem;
+    transition: all 0.3s ease;
+}
+
+.form-control:focus {
+    background: rgba(255, 255, 255, 0.15);
+    border-color: var(--neon-blue);
+    box-shadow: 0 0 20px rgba(0, 243, 255, 0.3);
+    color: var(--text-color);
+}
+
+.form-control::placeholder {
+    color: rgba(255, 255, 255, 0.6);
+}
+
+/* Buttons */
+.btn-neon {
+    background: transparent;
+    color: var(--neon-blue);
+    border: 2px solid var(--neon-blue);
+    padding: 0.8rem 2rem;
+    border-radius: 25px;
+    text-decoration: none;
+    display: inline-block;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.btn-neon:hover {
+    background: var(--neon-blue);
+    color: var(--dark-bg);
+    box-shadow: 0 0 20px var(--neon-blue);
+    transform: translateY(-2px);
+}
+
+.btn-outline-neon {
+    background: transparent;
+    color: var(--neon-pink);
+    border: 2px solid var(--neon-pink);
+    padding: 0.8rem 2rem;
+    border-radius: 25px;
+    text-decoration: none;
+    display: inline-block;
+    transition: all 0.3s ease;
+}
+
+.btn-outline-neon:hover {
+    background: var(--neon-pink);
+    color: var(--dark-bg);
+    box-shadow: 0 0 20px var(--neon-pink);
+    transform: translateY(-2px);
+}
+
+/* Footer */
+.footer {
+    background: var(--darker-bg);
+    padding: 2rem 0;
+    text-align: center;
+}
+
+.social-links {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    margin-bottom: 1rem;
+}
+
+.social-link {
+    color: var(--text-color);
+    font-size: 1.5rem;
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+.social-link:hover {
+    color: var(--neon-blue);
+    transform: translateY(-5px);
+}
+
+/* Animations */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes rotate-border {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+/* Notification Styles */
+.notification {
+    position: fixed;
+    top: 100px;
+    right: 20px;
+    padding: 1rem 2rem;
+    border-radius: 10px;
+    font-weight: bold;
+    z-index: 1001;
+    animation: slideInRight 0.3s ease;
+}
+
+.notification.success {
+    background: var(--neon-green);
+    color: var(--dark-bg);
+    box-shadow: 0 5px 20px var(--neon-green);
+}
+
+.notification.error {
+    background: var(--neon-pink);
+    color: var(--dark-bg);
+    box-shadow: 0 5px 20px var(--neon-pink);
+}
+
+/* Modal Styles */
+.certificate-modal {
+    backdrop-filter: blur(10px);
+}
+
+.modal-content {
+    background: linear-gradient(135deg, var(--darker-bg) 0%, #111 100%);
+    border: 2px solid var(--neon-blue);
+    box-shadow: 0 0 50px var(--neon-blue);
+}
+
+/* Active Nav Link */
+.nav-link.active {
+    color: var(--neon-blue) !important;
+}
+
+.nav-link.active::after {
+    width: 100% !important;
+}
+
+/* Animation Keyframes */
+@keyframes slideInRight {
+    from {
+        transform: translateX(100%);
+        opacity: 0;
+    }
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+@keyframes slideOutRight {
+    from {
+        transform: translateX(0);
+        opacity: 1;
+    }
+    to {
+        transform: translateX(100%);
+        opacity: 0;
+    }
+}
+
+@keyframes zoomIn {
+    from {
+        transform: scale(0.8);
+        opacity: 0;
+    }
+    to {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .animated-text {
+        font-size: 2.5rem;
+    }
+    
+    .typing-text {
+        font-size: 1.5rem;
+    }
+    
+    .section-title {
+        font-size: 2rem;
+    }
+    
+    .info-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .skills-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .contact-form-container {
+        padding: 2rem;
+    }
+    
+    .profile-frame {
+        width: 250px;
+        height: 250px;
+    }
+    
+    .profile-pic {
+        width: 230px;
+        height: 230px;
+    }
+}

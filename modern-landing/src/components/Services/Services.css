@@ -1,0 +1,75 @@
+.services-section {
+  position: relative;
+}
+
+.service-card {
+  border: none;
+  border-radius: 20px;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.service-card.popular {
+  border: 2px solid #667eea;
+  transform: scale(1.05);
+}
+
+.service-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1) !important;
+}
+
+.service-card.popular:hover {
+  transform: scale(1.05) translateY(-10px);
+}
+
+.popular-badge {
+  position: absolute;
+  top: 20px;
+  right: -30px;
+  background: linear-gradient(135deg, #667eea, #764ba2);
+  color: white;
+  padding: 5px 40px;
+  transform: rotate(45deg);
+  font-size: 0.8rem;
+  font-weight: 600;
+}
+
+.service-icon {
+  font-size: 3.5rem;
+}
+
+.service-features {
+  border-top: 1px solid #e9ecef;
+  border-bottom: 1px solid #e9ecef;
+  padding: 1.5rem 0;
+}
+
+.feature-check {
+  color: #28a745;
+  font-weight: bold;
+  margin-right: 0.5rem;
+}
+
+.service-price {
+  text-align: center;
+}
+
+.price-amount {
+  color: #667eea;
+}
+
+.price-period {
+  font-size: 1rem;
+}
+
+@media (max-width: 768px) {
+  .service-card.popular {
+    transform: scale(1);
+  }
+  
+  .service-card.popular:hover {
+    transform: translateY(-10px);
+  }
+}

@@ -1,0 +1,85 @@
+.custom-navbar {
+  padding: 1.5rem 0;
+  background: rgba(255, 255, 255, 0.1) !important;
+  backdrop-filter: blur(20px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  transition: all 0.4s ease;
+}
+
+.custom-navbar.scrolled {
+  background: rgba(255, 255, 255, 0.95) !important;
+  padding: 0.75rem 0;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+.custom-navbar.scrolled .navbar-brand,
+.custom-navbar.scrolled .nav-link-custom {
+  color: #1a1a1a !important;
+}
+
+.custom-navbar.scrolled .navbar-toggler {
+  border-color: #1a1a1a;
+}
+
+.custom-navbar.scrolled .navbar-toggler-icon {
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba(26, 26, 26, 0.8)' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+}
+
+.logo-icon {
+  font-size: 1.8rem;
+}
+
+.navbar-brand {
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: white !important;
+}
+
+.nav-link-custom {
+  color: white !important;
+  font-weight: 500;
+  margin: 0 0.5rem;
+  padding: 0.5rem 1rem !important;
+  border-radius: 25px;
+  transition: all 0.3s ease;
+}
+
+.nav-link-custom:hover {
+  background: rgba(255, 255, 255, 0.1);
+  transform: translateY(-2px);
+}
+
+.custom-navbar.scrolled .nav-link-custom:hover {
+  background: rgba(66, 153, 225, 0.1);
+  color: #4299e1 !important;
+}
+
+.btn-primary-custom {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%) !important;
+  border: none !important;
+  padding: 0.75rem 2rem !important;
+  border-radius: 25px !important;
+  font-weight: 600 !important;
+  box-shadow: 0 4px 15px rgba(102, 126, 234, 0.3) !important;
+  transition: all 0.3s ease !important;
+}
+
+.btn-primary-custom:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(102, 126, 234, 0.4) !important;
+}
+
+@media (max-width: 991.98px) {
+  .navbar-collapse {
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(20px);
+    border-radius: 15px;
+    margin-top: 1rem;
+    padding: 1rem;
+  }
+  
+  .custom-navbar .navbar-collapse .nav-link-custom {
+    color: #1a1a1a !important;
+    margin: 0.25rem 0;
+  }
+}
